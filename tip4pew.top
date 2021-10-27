@@ -1,0 +1,29 @@
+
+
+[ moleculetype ]
+; molname       nrexcl ; TNA+4P-Ew model
+  WAT             1
+
+  [atoms ]
+  ; nr type resnr residu atom cgnr charge
+  1     OW   1     water  O   1     0          15.994
+  2     HW   1     water  H1  1     0.52422   1.008
+  3     HW   1     water  H2  1     0.52422   1.008
+  4     EP   1     water  EPW   1    -1.04844   0.0
+
+  [constraints]
+  ;i j funct doh  dhh
+  1       2       1       0.09572
+  1       3       1       0.09572
+  2       3       1       0.15139
+
+[exclusions]
+  1       2       3       4
+  2       1       3       4
+  3       1       2       4
+  4       1       2       3
+
+  [dummies3]
+  ; Dummy from                    funct   a               b
+  4       1       2       3       1       0.10667671      0.1066
+

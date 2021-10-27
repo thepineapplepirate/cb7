@@ -1,0 +1,4 @@
+
+
+awk '/^\[ system \]/{while((getline p<f)>0) print p}1' f=tip4pewff.txt cb7copy.top > cb7new.top
+awk '/^\[ moleculetype \]/{while((getline p<f)>0) print p}1' f=tip4pewatomtypes.txt cb7copy.top > cb7at.top

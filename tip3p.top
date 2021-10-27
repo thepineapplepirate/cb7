@@ -1,0 +1,54 @@
+; tip3p topology
+
+[ defaults ]
+; nbfunc        comb-rule       gen-pairs       fudgeLJ fudgeQQ
+1               2               yes             0.5     0.8333
+
+[ atomtypes ]
+;name   bond_type     mass     charge   ptype   sigma         epsilon       Amb
+ OW       OW          15.9990  0.000     A     3.15075e-01    6.35968e-01 ; TIP3p O
+ HW       HW           1.0080  0.000     A     0.0            0.0         ; TIP3p H
+
+
+[ moleculetype ]
+; molname       nrexcl ; TIP3P model
+  SOL             2
+
+[ atoms ]
+;   nr   type  resnr residue  atom   cgnr     charge       mass
+     1     OW      1     SOL     O      1     -0.834   16.00000
+     2     HW      1     SOL    H1      1      0.417    1.00800
+     3     HW      1     SOL    H2      1      0.417    1.00800
+
+#ifdef FLEXIBLE
+[ bonds ]
+; i j   funct   length  force.c.
+1   2   1   0.09572   462750.4 0.09572   462750.4
+1   3   1   0.09572   462750.4 0.09572   462750.4
+
+[ angles ]
+; i j   k   funct   angle   force.c.
+2   1   3   1   104.520    836.800  104.520    836.800
+#else
+[ settles ]
+; i j   funct   length
+1   1   0.09572 0.15139
+
+[ exclusions ]
+1   2   3
+2   1   3
+3   1   2
+#endif
+
+
+
+
+[ system ]
+; Name
+tip3p water
+
+[ molecules ]
+; Compound        nmols
+SOL             1
+
+
